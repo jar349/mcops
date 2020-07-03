@@ -1,0 +1,12 @@
+commands:
+  - list
+  - me
+  - msg
+  - position
+  - say
+  - teleport
+  - tell
+  - time
+  - toggledownfall
+  - tp
+  - weather
