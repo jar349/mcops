@@ -43,6 +43,10 @@ def get_help():
     return "Runs minecraft commands\nTry: `.mc commands`"
 
 
+@app.get("/ping", response_class=PlainTextResponse)
+def get_ping():
+    return "pong"
+
 @app.get("/metadata", response_class=JSONResponse)
 def get_metadata():
     return {"protocol_version": "1.0"}
