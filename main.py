@@ -68,7 +68,7 @@ def get_response(request: Command):
 
     # the command must either be whitelisted or literally the "commands" command.  Otherwise send back an error message.
     if mc_cmd in config["commands"]:
-        response = mcrcon.command(sock, f"/{command}")
+        response = mcrcon.command(sock, f"{command}")
         return {"message": response}
     elif mc_cmd == "commands":
         msg = "The following commands are whitelisted:"
