@@ -20,10 +20,11 @@ with open("./config/mcops.yaml", "r") as file:
     config = load(file, Loader=Loader)
 
 host = os.environ.get("MCOPS_HOST", "localhost")
-port = os.environ.get("MCOPS_PORT", 25575)
+port = int(os.environ.get("MCOPS_PORT", 25575))
 password = os.environ["MCOPS_PASSWORD"]
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print(f"Will connect to {host} on port {port}") 
 sock.connect((host, port))
 result = mcrcon.login(sock, password)
 
